@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <img src="/image.jpg" alt="" width="70px" height="70px">
+    <div class="content">
+      <header>Cookies constent</header>
+      <p>This website use cookies to ensure you get the best experience on your website</p>
+      <div class="buttons">
+        <button class="items">I undersatand</button>
+        <a href="#" class="items">learn more</a>
+      </div>
+    </div>
+  </div>
+  <script>
+     const cookieBox = document.querySelector(".wrapper"),
+    acceptBtn = cookieBox.querySelector("button");
+    acceptBtn.onclick = ()=>{
+  
+      document.cookie = "CookieBy=CodingNepal; max-age="+60*60*24*30;
+      if(document.cookie){ 
+        cookieBox.classList.add("hide"); 
+      }else{ 
+        alert("Cookie can't be set! Please unblock this site from the cookie setting of your browser.");
+      }
+    }
+    let checkCookie = document.cookie.indexOf("CookieBy=CodingNepal"); 
+ 
+    checkCookie != -1 ? cookieBox.classList.add("hide") : cookieBox.classList.remove("hide");
+  </script>
+</body>
+</html>
